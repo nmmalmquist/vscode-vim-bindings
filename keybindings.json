@@ -1,5 +1,10 @@
 // Place your key bindings in this file to override the defaults
 [
+  // ALLOWS ME TO HAVE CTRL S AS SAVE FOR MAC
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.files.save"
+  },
   // NAVIGATION
   {
     "key": "ctrl+shift+a",
@@ -28,12 +33,12 @@
   {
     "key": "alt+j",
     "command": "editor.action.moveLinesDownAction",
-    "when": "editorTextFocus && editorReadonly && vim.active"
+    "when": "editorTextFocus && vim.active"
   },
   {
     "key": "alt+k",
     "command": "editor.action.moveLinesUpAction",
-    "when": "editorTextFocus && editorReadonly && vim.active"
+    "when": "editorTextFocus && vim.active"
   },
   {
     "key": "alt+m",
