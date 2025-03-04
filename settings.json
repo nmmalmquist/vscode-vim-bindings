@@ -1,27 +1,22 @@
 {
-  "workbench.colorTheme": "Default Dark Modern",
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.iconTheme": "vscode-icons",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": "explicit"
-  },
-  "git.enableSmartCommit": true,
-  "security.workspace.trust.untrustedFiles": "open",
-  "git.confirmSync": false,
-  "terminal.integrated.env.windows": {},
-  "console-ninja.featureSet": "Community",
-  "window.zoomLevel": -1,
-  "editor.minimap.enabled": false,
-  "breadcrumbs.enabled": false,
   "editor.lineNumbers": "relative",
+  "git.confirmSync": false,
   // VIM settings
   "vim.leader": "<Space>",
+  "vim.useSystemClipboard": true,
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
       "after": ["<Esc>"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["v", "v"],
+      "after": ["<Esc>", "<Esc>"] // exit both visual mode and multi-cursor mode if its there.
     }
   ],
   "vim.normalModeKeyBindings": [
@@ -45,29 +40,49 @@
       "before": ["leader", "l"],
       "commands": ["workbench.action.focusRightGroup"]
     },
-    { "before": ["leader", "w"], "commands": [":w!"] },
-    { "before": ["leader", "q"], "commands": [":q!"] },
-    { "before": ["leader", "x"], "commands": [":x!"] },
     {
-      "before": ["[", "d"],
-      "commands": ["editor.action.marker.prev"]
+      "before": ["<C-u>"],
+      "after": ["<C-u>", "z", "z"]
     },
     {
-      "before": ["]", "d"],
-      "commands": ["editor.action.marker.next"]
+      "before": ["<C-d>"],
+      "after": ["<C-d>", "z", "z"]
     },
-    {
-      "before": ["<leader>", "c", "a"],
-      "commands": ["editor.action.quickFix"]
-    },
-    { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
     {
       "before": ["g", "h"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
     },
     {
-      "before": ["<A-j>"],
-      "commands": [":m + 1"]
+      "before": ["g", "d"],
+      "commands": ["editor.action.goToTypeDefinition"]
+    },
+    {
+      "before": ["<leader>", "r", "s"],
+      "commands": ["editor.action.rename"]
+    },
+    // Navigation forwards and back
+    {
+      "before": ["g", "f"],
+      "commands": ["workbench.action.navigateForward"]
+    },
+    {
+      "before": ["g", "b"],
+      "commands": ["workbench.action.navigateBack"]
     }
-  ]
+  ],
+  "extensions.ignoreRecommendations": true,
+  "editor.minimap.enabled": false,
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.autoReveal": false,
+  "scm.autoReveal": false,
+  "explorer.autoRevealExclude": {
+    "**/*temple.go": true
+  },
+  "[templ]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "liveServer.settings.root": "/src",
+  "editor.formatOnSave": true,
+  "git.enableSmartCommit": true
 }

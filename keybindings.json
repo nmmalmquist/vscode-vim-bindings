@@ -1,75 +1,107 @@
 // Place your key bindings in this file to override the defaults
 [
-  // ALLOWS ME TO HAVE CTRL S AS SAVE FOR MAC
+  // Fuzzy finder
   {
-    "key": "ctrl+s",
-    "command": "workbench.action.files.save"
-  },
-  // NAVIGATION
-  {
-    "key": "ctrl+shift+a",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus"
+    "key": "cmd+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
   },
   {
-    "key": "ctrl+shift+b",
-    "command": "workbench.action.terminal.focusPrevious",
-    "when": "terminalFocus"
+    "key": "cmd+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
   },
   {
-    "key": "ctrl+shift+j",
-    "command": "workbench.action.togglePanel"
+    "key": "cmd+u",
+    "command": "workbench.action.closeQuickOpen",
+    "when": "inQuickOpen"
   },
+  //COPY Lines
   {
-    "key": "ctrl+shift+n",
-    "command": "workbench.action.terminal.new",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+shift+w",
-    "command": "workbench.action.terminal.kill",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "alt+j",
-    "command": "editor.action.moveLinesDownAction",
-    "when": "editorTextFocus && vim.active"
-  },
-  {
-    "key": "alt+k",
-    "command": "editor.action.moveLinesUpAction",
-    "when": "editorTextFocus && vim.active"
-  },
-  {
-    "key": "alt+m",
-    "command": "editor.action.addSelectionToNextFindMatch",
+    "key": "cmd+shift+j",
+    "command": "editor.action.copyLinesDownAction",
     "when": "editorTextFocus"
   },
-
   {
-    "key": "ctrl+l",
-    "command": "cursorRight",
-    "when": "editorTextFocus && vim.active"
+    "key": "cmd+shift+k",
+    "command": "editor.action.copyLinesUpAction",
+    "when": "editorTextFocus"
   },
+  // Move in insert mode
+  // {
+  //   "key": "cmd+h",
+  //   "command": "cursorLeft",
+  //   "when": "editorTextFocus"
+  // },
+  // {
+  //   "key": "cmd+j",
+  //   "command": "cursorDown",
+  //   "when": "editorTextFocus"
+  // },
+  // {
+  //   "key": "cmd+k",
+  //   "command": "cursorUp",
+  //   "when": "editorTextFocus"
+  // },
+  // {
+  //   "key": "cmd+l",
+  //   "command": "cursorRight",
+  //   "when": "editorTextFocus"
+  // },
 
+  // Move lines
   {
-    "key": "ctrl+h",
-    "command": "cursorLeft",
-    "when": "editorTextFocus && vim.active"
+    "key": "cmd+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus"
   },
-  // FILE TREE
+  {
+    "key": "cmd+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus"
+  },
+  // Sidebar toggles
   {
     "command": "workbench.action.toggleSidebarVisibility",
-    "key": "ctrl+e"
+    "key": "cmd+b"
   },
   {
     "command": "workbench.files.action.focusFilesExplorer",
-    "key": "ctrl+e",
-    "when": "!filesExplorerFocus"
+    "key": "cmd+e"
+  },
+  {
+    "command": "workbench.action.focusActiveEditorGroup",
+    "key": "cmd+e",
+    "when": "filesExplorerFocus"
+  },
+  {
+    "command": "workbench.scm.focus",
+    "key": "cmd+g"
+  },
+  {
+    "command": "workbench.action.focusActiveEditorGroup",
+    "key": "cmd+g",
+    "when": "sideBarFocus && activeViewlet == 'workbench.view.scm'"
+  },
+  // explorer nav
+  {
+    "key": "j",
+    "command": "list.focusDown",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "k",
+    "command": "list.focusAnyUp",
+    "when": "explorerViewletFocus"
   },
   {
     "key": "n",
     "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "cmd+n",
+    "command": "explorer.newFolder",
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
@@ -78,22 +110,24 @@
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
-    "key": "shift+n",
-    "command": "explorer.newFolder",
-    "when": "explorerViewletFocus"
-  },
-  {
     "command": "deleteFile",
     "key": "d",
     "when": "filesExplorerFocus && !inputFocus"
   },
+  // toggle terminal
   {
-    "key": "ctrl+alt+v",
-    "command": "toggleVim"
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  // nav inside autocomplete
+  {
+    "key": "cmd+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetVisible"
   },
   {
-    "key": "ctrl+t",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "filesExplorerFocus"
+    "key": "cmd+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetVisible"
   }
 ]
